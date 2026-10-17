@@ -2,25 +2,624 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Letkemann Studio</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title data-en="Robo Rumble – Offline Robot Shooter for Android">Robo Rumble – Offline Roboter-Shooter für Android</title>
+<meta name="description" content="Robo Rumble ist ein kostenloser Offline-Shooter gegen Roboter-Horden für Android: Wellen überleben, 5 Bosse, 19 Karten, Fahrzeuge, Werkstatt – ohne Internet, ohne Konto, ohne In-App-Käufe. Jetzt bei Google Play." data-en-content="Robo Rumble is a free offline shooter against robot hordes for Android: survive waves, 5 bosses, 19 maps, vehicles, workshop – no Wi-Fi, no account, no in-app purchases. Get it on Google Play.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0b141c">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://rolet89.github.io/">
+<link rel="alternate" hreflang="de" href="https://rolet89.github.io/">
+<link rel="alternate" hreflang="en" href="https://rolet89.github.io/?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://rolet89.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Robo Rumble">
+<meta property="og:title" content="Robo Rumble – Offline Roboter-Shooter für Android">
+<meta property="og:description" content="Offline-Shooter gegen Roboter-Horden: Wellen, 5 Bosse, 19 Karten – kostenlos, ohne Internet, ohne Konto.">
+<meta property="og:url" content="https://rolet89.github.io/">
+<meta property="og:image" content="https://rolet89.github.io/assets/feature.png">
+<meta property="og:image:secure_url" content="https://rolet89.github.io/assets/feature.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta property="og:image:alt" content="Robo Rumble: Ein orangefarbener Roboter stellt sich in einer Fabrikhalle einer Horde grauer Roboter">
+<meta property="og:locale" content="de_DE">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Robo Rumble – Offline Roboter-Shooter für Android">
+<meta name="twitter:description" content="Offline-Shooter gegen Roboter-Horden: Wellen, 5 Bosse, 19 Karten – kostenlos, ohne Internet, ohne Konto.">
+<meta name="twitter:image" content="https://rolet89.github.io/assets/feature.png">
+<meta name="twitter:image:alt" content="Robo Rumble: Ein orangefarbener Roboter stellt sich in einer Fabrikhalle einer Horde grauer Roboter">
+<link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icon192.png">
+<link rel="apple-touch-icon" sizes="192x192" href="assets/icon192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["VideoGame", "SoftwareApplication", "MobileApplication"],
+  "name": "Robo Rumble",
+  "url": "https://rolet89.github.io/",
+  "image": "https://rolet89.github.io/assets/feature.png",
+  "description": "Offline-Shooter gegen Roboter-Horden für Android: Welle für Welle überleben, 5 Bosse besiegen, 19 Karten, fahrbare Fahrzeuge, Werkstatt mit Upgrades – kostenlos, ohne Internet, ohne Konto, ohne In-App-Käufe.",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "Android",
+  "gamePlatform": "Android",
+  "genre": ["Ego-Shooter", "Arena-Shooter", "Wave Survival"],
+  "playMode": "SinglePlayer",
+  "inLanguage": "de",
+  "softwareVersion": "1.57",
+  "installUrl": "https://play.google.com/store/apps/details?id=de.letkemannstudio.roborumble",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"},
+  "author": {"@type": "Organization", "name": "Letkemann Studio", "email": "robertletkemann@googlemail.com"},
+  "publisher": {"@type": "Organization", "name": "Letkemann Studio"}
+}
+</script>
 <style>
-body{margin:0;font-family:"Segoe UI",system-ui,sans-serif;background:#0b1020;color:#e8eefc;display:flex;min-height:100vh;align-items:center;justify-content:center}
-main{max-width:560px;padding:40px 24px;text-align:center}
-h1{font-size:34px;margin:0 0 8px;letter-spacing:.04em}
-p{color:#9fb0d0;line-height:1.55;margin:0 0 18px}
-a.btn{display:inline-block;margin-top:10px;padding:12px 22px;border-radius:12px;background:linear-gradient(135deg,#2f8fff,#37c6ff);color:#001320;font-weight:700;text-decoration:none}
-small{display:block;margin-top:40px;color:#6f80a4;font-size:12px}
-small a{color:#9fb0d0}
+:root{
+  --bg:#0b141c;--bg2:#0e1922;--plate:#132230;--plate2:#182b3b;--line:#223546;--line2:#2f475b;
+  --ink:#e8eff6;--muted:#a3b4c4;--dim:#728799;
+  --orange:#ff8a1f;--orange2:#ffa64a;--ember:#ff5b2e;--on-orange:#1a0d03;--ok:#3ddc84;--blue:#49c0ff;
+  --r:14px;--gutter:16px;--max:1120px;
+  --head:"Chakra Petch","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --body:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;overflow-x:hidden;
+  background-image:
+    radial-gradient(900px 480px at 10% -10%,rgba(255,138,31,.17),transparent 62%),
+    radial-gradient(800px 500px at 110% 10%,rgba(73,192,255,.09),transparent 60%),
+    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:auto,auto,40px 40px,40px 40px}
+img,video,svg{display:block;max-width:100%}
+img,video{height:auto}
+a{color:var(--orange2)}
+a:hover{color:#fff}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:6px}
+[hidden]{display:none!important}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+h1,h2,h3{font-family:var(--head);margin:0;line-height:1.1;letter-spacing:.01em}
+h2{font-size:clamp(26px,5vw,40px);font-weight:700;text-transform:uppercase}
+h3{font-size:18px;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+p{margin:0}
+.eyebrow{font-family:var(--head);font-weight:600;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin:0 0 10px}
+.lead{color:var(--muted);font-size:17px;max-width:62ch;margin:12px 0 0}
+section{padding:52px 0;position:relative}
+section.alt{background:rgba(0,0,0,.24)}
+@media (min-width:900px){section{padding:80px 0}}
+.hazard{height:7px;background:repeating-linear-gradient(135deg,var(--orange) 0 14px,#141414 14px 28px);opacity:.6}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Kopfzeile */
+.top{position:sticky;top:0;z-index:30;background:rgba(11,20,28,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.07)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:58px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-family:var(--head);font-weight:700;letter-spacing:.06em;font-size:17px;white-space:nowrap}
+.brand img{width:34px;height:34px;border-radius:9px;flex:none}
+.brand b{color:var(--orange)}
+.topr{display:flex;align-items:center;gap:10px}
+.lang{display:inline-flex;border:1px solid var(--line2);border-radius:999px;padding:3px;background:var(--bg2)}
+.lang button{appearance:none;border:0;background:transparent;color:var(--muted);font:600 13px/1 var(--body);letter-spacing:.08em;padding:8px 11px;border-radius:999px;cursor:pointer;min-width:42px}
+.lang button[aria-pressed="true"]{background:var(--orange);color:var(--on-orange)}
+.lang button:hover:not([aria-pressed="true"]){color:#fff}
+.topcta{display:none;font:600 14px/1 var(--body);color:var(--on-orange);background:var(--orange2);text-decoration:none;padding:11px 16px;border-radius:999px;white-space:nowrap}
+.topcta:hover{background:#fff;color:var(--on-orange)}
+@media (min-width:900px){.topcta{display:inline-block}}
+
+/* Hero */
+.hero{padding:34px 0 40px;overflow:hidden}
+@media (min-width:900px){.hero{padding:72px 0 72px}}
+.hero-grid{display:grid;gap:30px;align-items:center}
+@media (min-width:900px){.hero-grid{grid-template-columns:1.02fr .98fr;gap:52px}}
+h1.title{font-size:clamp(50px,13vw,104px);font-weight:700;font-style:italic;text-transform:uppercase;line-height:.92;letter-spacing:-.005em;
+  background:linear-gradient(92deg,#fff 0%,var(--orange2) 52%,var(--ember) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 8px 28px rgba(255,120,30,.28));padding-right:.08em}
+.sub{font-size:clamp(18px,2.4vw,22px);color:var(--ink);max-width:38ch;margin:16px 0 0;line-height:1.4;text-wrap:balance}
+.cta{margin-top:24px;display:grid;gap:14px;max-width:520px}
+.btn{display:flex;align-items:center;justify-content:center;gap:12px;min-height:60px;padding:14px 22px;border-radius:12px;text-decoration:none;
+  background:linear-gradient(180deg,var(--orange2),var(--orange));color:var(--on-orange);font-family:var(--head);font-weight:700;font-size:21px;letter-spacing:.03em;text-transform:uppercase;
+  box-shadow:0 10px 30px rgba(255,138,31,.32),inset 0 1px 0 rgba(255,255,255,.35);border:1px solid #c96a12;position:relative;isolation:isolate}
+.btn::after{content:"";position:absolute;inset:4px;border:1px dashed rgba(26,13,3,.28);border-radius:8px;pointer-events:none}
+.btn:hover{background:linear-gradient(180deg,#ffd199,var(--orange2));color:var(--on-orange)}
+.btn:active{transform:translateY(1px)}
+.btn svg{width:26px;height:26px;flex:none}
+.badge-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
+.badge{display:inline-block;line-height:0;border-radius:8px;flex:none}
+.badge img{height:66px;width:auto;margin:-9px -10px}
+.fine{color:var(--muted);font-size:14px;line-height:1.4;flex:1 1 200px;min-width:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0;list-style:none}
+.chips li{display:inline-flex;align-items:center;gap:8px;font:600 13px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--ink);border:1px solid var(--line2);border-radius:999px;padding:10px 13px;background:rgba(255,255,255,.03)}
+.chips li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 9px var(--ok);flex:none}
+.key{margin:0;position:relative;border-radius:18px;padding:9px;background:linear-gradient(160deg,#2a3c4e,#111c27);box-shadow:0 30px 80px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.12)}
+.key::before,.rivets::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:
+  radial-gradient(circle at 12px 12px,#5b6c82 2px,transparent 2.7px),radial-gradient(circle at calc(100% - 12px) 12px,#5b6c82 2px,transparent 2.7px),
+  radial-gradient(circle at 12px calc(100% - 12px),#5b6c82 2px,transparent 2.7px),radial-gradient(circle at calc(100% - 12px) calc(100% - 12px),#5b6c82 2px,transparent 2.7px)}
+.key img{border-radius:10px;width:100%;aspect-ratio:1024/500;object-fit:cover;background:#0a0f14}
+.key figcaption{font-family:var(--head);font-weight:600;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);text-align:center;padding:9px 4px 1px}
+
+/* Schritte */
+.steps{display:grid;gap:14px;margin:30px 0 0;padding:0;list-style:none;counter-reset:step}
+@media (min-width:640px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1000px){.steps{grid-template-columns:repeat(4,1fr);gap:16px}}
+.steps li{position:relative;background:linear-gradient(180deg,var(--plate),var(--bg2));border:1px solid var(--line);border-radius:var(--r);padding:22px 20px 20px;overflow:hidden}
+.steps li::before{content:"";position:absolute;left:0;top:0;right:0;height:3px;background:linear-gradient(90deg,var(--orange),transparent 75%)}
+.steps .n{position:absolute;right:14px;top:10px;font-family:var(--head);font-weight:700;font-size:46px;line-height:1;color:rgba(255,255,255,.06);font-style:italic}
+.steps svg{width:34px;height:34px;color:var(--orange2);margin-bottom:14px}
+.steps h3{margin-bottom:6px}
+.steps p{color:var(--muted);font-size:15.5px}
+.more{margin:22px 0 0;color:var(--muted);font-size:16px;max-width:70ch}
+.more b{color:var(--ink);font-weight:600}
+
+/* Zahlen */
+.nums{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin:30px 0 0;padding:0;list-style:none}
+.nums li{grid-column:span 2;position:relative;background:var(--plate);border:1px solid var(--line);border-radius:var(--r);padding:20px 10px 16px;text-align:center}
+.nums li:nth-child(4),.nums li:nth-child(5){grid-column:span 3}
+@media (min-width:900px){.nums{grid-template-columns:repeat(5,1fr);gap:16px}.nums li,.nums li:nth-child(4),.nums li:nth-child(5){grid-column:span 1;padding:26px 12px 22px}}
+.nums b{display:block;font-family:var(--head);font-weight:700;font-size:clamp(40px,7vw,56px);line-height:1;color:var(--orange2);font-style:italic}
+.nums span{display:block;margin-top:8px;font:600 12px/1.3 var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+/* Galerie */
+.gal{display:grid;grid-auto-flow:column;grid-auto-columns:min(84%,420px);gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px var(--gutter) 18px;margin:28px calc(var(--gutter) * -1) 0;list-style:none;scrollbar-width:thin;scrollbar-color:var(--line2) transparent}
+.gal li{scroll-snap-align:start}
+@media (min-width:900px){.gal{grid-auto-flow:row;grid-template-columns:repeat(4,1fr);grid-auto-columns:auto;overflow:visible;margin:28px 0 0;padding:0}}
+.gal figure{margin:0}
+.gal button{appearance:none;border:0;padding:0;background:none;cursor:zoom-in;width:100%;border-radius:12px;overflow:hidden;display:block}
+.gal img{aspect-ratio:16/9;object-fit:cover;width:100%;border-radius:12px;border:1px solid var(--line);transition:transform .25s ease,border-color .2s;background:#0a0f14}
+.gal button:hover img{transform:scale(1.02);border-color:var(--orange)}
+.gal figcaption{font-size:14px;color:var(--muted);margin-top:9px;padding-left:2px}
+.gal figcaption b{color:var(--orange2);font-weight:600;margin-right:6px;font-family:var(--head)}
+dialog.lb{border:0;padding:0;background:transparent;max-width:none;max-height:none;width:100vw;height:100dvh;margin:0;color:var(--ink)}
+dialog.lb::backdrop{background:rgba(5,9,13,.93)}
+.lbin{display:grid;grid-template-rows:1fr auto;height:100%;align-items:center;justify-items:center;padding:14px}
+.lbin img{max-width:100%;max-height:calc(100dvh - 96px);width:auto;height:auto;border-radius:10px;box-shadow:0 20px 70px rgba(0,0,0,.6)}
+.lbbar{display:flex;align-items:center;justify-content:center;gap:12px;padding:10px 0 0;width:100%;color:var(--muted);font-size:15px}
+.lbbar p{text-align:center;flex:1;min-width:0}
+.lbbtn{appearance:none;border:1px solid var(--line2);background:var(--plate);color:var(--ink);width:44px;height:44px;border-radius:50%;cursor:pointer;display:grid;place-items:center;flex:none}
+.lbbtn:hover{border-color:var(--orange);color:var(--orange)}
+.lbx{position:fixed;top:12px;right:12px}
+.lbbtn svg{width:20px;height:20px}
+
+/* Roboter */
+.robos{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin:26px 0 0;padding:0;list-style:none}
+@media (min-width:560px){.robos{grid-template-columns:repeat(3,1fr)}}
+@media (min-width:760px){.robos{grid-template-columns:repeat(4,1fr)}}
+@media (min-width:1000px){.robos{grid-template-columns:repeat(5,1fr)}}
+.robos li{position:relative;border:1px solid var(--line2);background:var(--plate);border-radius:10px;padding:11px 12px 10px 30px;min-width:0}
+.robos li::before{content:"";position:absolute;left:12px;top:17px;width:9px;height:9px;border-radius:50%;background:var(--c,var(--orange));box-shadow:0 0 8px var(--c,var(--orange))}
+.robos b{display:block;font-family:var(--head);font-weight:700;font-size:15px;letter-spacing:.06em;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.robos small{display:block;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.robos li.boss{border-color:var(--orange);background:rgba(255,138,31,.09)}
+.robos li.boss small{color:var(--orange)}
+.robonote{color:var(--muted);font-size:15.5px;margin:18px 0 0;max-width:70ch}
+
+/* Trailer */
+.frame{margin:28px 0 0;position:relative;border-radius:18px;padding:9px;background:linear-gradient(160deg,#2a3c4e,#111c27);box-shadow:0 30px 80px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.12)}
+.frame video{width:100%;aspect-ratio:16/9;border-radius:10px;background:#000;object-fit:cover}
+@media (min-width:900px){.frame{max-width:900px;margin-left:auto;margin-right:auto}}
+
+/* Presse */
+.press{display:grid;gap:28px;align-items:start}
+@media (min-width:900px){.press{grid-template-columns:1.05fr .95fr;gap:48px}}
+.mail{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line2);border-radius:12px;padding:13px 16px;text-decoration:none;color:var(--ink);background:var(--plate);font-weight:600;margin-top:20px;max-width:100%;word-break:break-all}
+.mail:hover{border-color:var(--orange);color:#fff}
+.mail svg{width:20px;height:20px;color:var(--orange);flex:none}
+.dl{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:8px}
+.dl a{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:rgba(255,255,255,.02)}
+.dl a:hover{border-color:var(--orange)}
+.dl svg{width:22px;height:22px;color:var(--orange2);flex:none}
+.dl span{flex:1;min-width:0}
+.dl small{display:block;color:var(--dim);font-size:13px}
+.sheet{margin:0;background:var(--plate);border:1px solid var(--line);border-radius:var(--r);padding:8px 18px;position:relative}
+.sheet div{display:grid;gap:2px 14px;padding:11px 0;border-bottom:1px solid var(--line)}
+@media (min-width:560px){.sheet div{grid-template-columns:minmax(96px,30%) 1fr;gap:4px 14px}}
+.sheet div:last-child{border-bottom:0}
+.sheet dt{font:600 12px/1.5 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--dim);padding-top:2px}
+.sheet dd{margin:0;font-size:15.5px;min-width:0;overflow-wrap:anywhere}
+.sheet dd a{color:var(--orange2)}
+
+/* FAQ */
+.faq{margin-top:26px;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:18px 44px 18px 0;font-family:var(--head);font-weight:700;font-size:17px;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";position:absolute;right:6px;top:50%;width:14px;height:14px;transform:translateY(-50%);
+  background:linear-gradient(var(--orange),var(--orange)) center/14px 2px no-repeat,linear-gradient(var(--orange),var(--orange)) center/2px 14px no-repeat;transition:transform .2s}
+.faq details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+.faq .a{color:var(--muted);padding:0 0 18px;max-width:70ch}
+.faq .a a{color:var(--orange2)}
+
+/* Schluss-CTA, Footer, Dock */
+.final{text-align:center;padding:60px 0 64px}
+.final .lead{margin:10px auto 0}
+.final .cta{margin:26px auto 0;justify-items:center}
+.final .btn{width:100%}
+.final .badge-row{justify-content:center}
+footer{border-top:1px solid var(--line);padding:32px 0 44px;color:var(--muted);font-size:14.5px;background:rgba(0,0,0,.28)}
+footer .row{display:flex;flex-wrap:wrap;gap:12px 26px;align-items:center;justify-content:space-between}
+footer nav{display:flex;flex-wrap:wrap;gap:8px 22px}
+footer nav a{color:var(--ink);text-decoration:none;font-weight:600}
+footer nav a:hover{color:var(--orange2)}
+footer .legal{margin:18px 0 0;font-size:12.5px;color:var(--dim);max-width:80ch}
+body.docked footer{padding-bottom:calc(44px + 84px + env(safe-area-inset-bottom))}
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:40;padding:10px var(--gutter) calc(10px + env(safe-area-inset-bottom));background:rgba(11,20,28,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.08);transform:translateY(110%);visibility:hidden;transition:transform .25s ease,visibility 0s .25s}
+.dock.on{transform:none;visibility:visible;transition:transform .25s ease,visibility 0s}
+.dock .btn{min-height:52px;font-size:18px;box-shadow:0 6px 20px rgba(255,138,31,.28)}
+@media (min-width:900px){.dock{display:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
-<main>
-<h1>Letkemann Studio</h1>
-<p>Kleine Spiele für zwischendurch, gemacht in Deutschland.</p>
-<p><strong>Robo Rumble</strong> – rasanter Roboter-Shooter: Wellen, Bosse, 19 Karten, Fahrzeuge, Rüstungen. Offline, ohne Konto.</p>
-<a class="btn" href="https://play.google.com/store/apps/details?id=de.letkemannstudio.roborumble">Bei Google Play laden</a>
-<small>Kontakt: robertletkemann@googlemail.com · <a href="https://claude.ai/code/artifact/17e1edc0-d2c9-4457-a5b6-9c10093004e7">Datenschutzerklärung</a></small>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Robo Rumble – zum Seitenanfang" data-en-aria="Robo Rumble – back to top"><img src="assets/icon192.png" width="34" height="34" alt="">ROBO&nbsp;<b>RUMBLE</b></a>
+    <div class="topr">
+      <div class="lang" role="group" aria-label="Sprache / Language">
+        <button type="button" data-lang="de" aria-pressed="true" lang="de">DE</button>
+        <button type="button" data-lang="en" aria-pressed="false" lang="en">EN</button>
+      </div>
+      <a class="topcta" href="https://play.google.com/store/apps/details?id=de.letkemannstudio.roborumble" rel="noopener" data-en="Get it free">Kostenlos laden</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow" data-en="First-person shooter · Wave survival · Android">Ego-Shooter · Wave Survival · Android</p>
+      <h1 class="title">Robo Rumble</h1>
+      <p class="sub" data-en="Offline robot wave shooter: 19 maps, 5 bosses, vehicles – no Wi-Fi, no account">Offline-Shooter gegen Roboter-Horden: Wellen, 5 Bosse, 19 Karten – ohne Internet</p>
+      <div class="cta">
+        <a class="btn" id="cta-main" href="https://play.google.com/store/apps/details?id=de.letkemannstudio.roborumble" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+          <span data-en="Download free now">Jetzt kostenlos laden</span>
+        </a>
+        <div class="badge-row">
+          <a class="badge" href="https://play.google.com/store/apps/details?id=de.letkemannstudio.roborumble" rel="noopener" aria-label="Jetzt bei Google Play" data-en-aria="Get it on Google Play"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/de_badge_web_generic.png" data-en-src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" width="646" height="250" alt="Jetzt bei Google Play" data-en-alt="Get it on Google Play" onerror="this.parentNode.hidden=true"></a>
+          <p class="fine" data-en="Free · Android · ad-supported, no in-app purchases · in-game text in German">Kostenlos · Android · werbefinanziert, keine In-App-Käufe</p>
+        </div>
+      </div>
+      <ul class="chips" aria-label="Kurzfakten">
+        <li><span data-en="Offline">Offline</span></li>
+        <li><span data-en="No account">Kein Konto</span></li>
+        <li><span data-en="No in-app purchases">Keine In-App-Käufe</span></li>
+      </ul>
+    </div>
+    <figure class="key">
+      <picture>
+        <source type="image/webp" srcset="assets/feature-640.webp 640w, assets/feature-1024.webp 1024w" sizes="(min-width:900px) 540px, calc(100vw - 50px)">
+        <img src="assets/feature.png" width="1024" height="500" alt="Ein orangefarbener Roboter stellt sich in einer Fabrikhalle einer Horde grauer Roboter" data-en-alt="An orange robot faces a horde of grey robots in a factory hall" fetchpriority="high" decoding="async">
+      </picture>
+      <figcaption data-en="Cartoon action against robots · no humans, no blood">Cartoon-Action gegen Roboter · keine Menschen, kein Blut</figcaption>
+    </figure>
+  </div>
+</section>
+<div class="hazard" role="presentation"></div>
+
+<section id="spiel" class="alt">
+  <div class="wrap">
+    <p class="eyebrow" data-en="How it plays">So spielt es sich</p>
+    <h2 data-en="Short rounds, long motivation">Kurze Runden, lange Motivation</h2>
+    <p class="lead" data-en="A round takes only a few minutes – perfect for the train, the plane or a dead zone. And every round plays out differently.">Eine Runde dauert nur wenige Minuten – ideal für Zug, Flugzeug oder Funkloch. Und jede Runde läuft anders.</p>
+    <ol class="steps">
+      <li><span class="n" aria-hidden="true">01</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 16c2.5 0 2.5-3 5-3s2.5 3 5 3 2.5-3 5-3 2.5 3 5 3M2 10c2.5 0 2.5-3 5-3s2.5 3 5 3 2.5-3 5-3 2.5 3 5 3M2 22c2.5 0 2.5-3 5-3s2.5 3 5 3 2.5-3 5-3 2.5 3 5 3"/></svg>
+        <h3 data-en="Survive the waves">Wellen überleben</h3>
+        <p data-en="Wave after wave, robot hordes roll into the arena. Keep them at bay and survive the next round.">Welle für Welle rollen Roboter-Horden in die Arena. Halte sie auf Abstand und überlebe die nächste Runde.</p></li>
+      <li><span class="n" aria-hidden="true">02</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="7" height="14" rx="1.5"/><rect x="14" y="5" width="7" height="14" rx="1.5"/><path d="M6.5 9v6M14 12h7M17.5 9v6"/></svg>
+        <h3 data-en="Pick an upgrade">Upgrade wählen</h3>
+        <p data-en="After every wave you pick one of several upgrades and shape your own playstyle step by step.">Nach jeder Welle wählst du eines von mehreren Upgrades und baust Schritt für Schritt deinen eigenen Spielstil.</p></li>
+      <li><span class="n" aria-hidden="true">03</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a7.5 7.5 0 0 0-7.5 7.5c0 2.7 1.4 4.6 3 5.8V19a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1v-2.7c1.6-1.2 3-3.1 3-5.8A7.5 7.5 0 0 0 12 3Z"/><circle cx="9.2" cy="11" r="1.3" fill="currentColor" stroke="none"/><circle cx="14.8" cy="11" r="1.3" fill="currentColor" stroke="none"/><path d="M10 20v2M14 20v2M9.5 16h5"/></svg>
+        <h3 data-en="Boss from wave 5">Boss ab Welle 5</h3>
+        <p data-en="The first boss shows up at wave 5 – and all 5 bosses have a second phase. From DR. CLANK to BOOMBOT.">Ab Welle 5 wartet der erste Boss – und alle 5 Bosse haben eine zweite Phase. Von DR. CLANK bis BOOMBOT.</p></li>
+      <li><span class="n" aria-hidden="true">04</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h10v9H3zM13 10h4l3 3v3h-7z"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>
+        <h3 data-en="Drive vehicles">Fahrzeuge fahren</h3>
+        <p data-en="Car, forklift and truck are drivable – hop in and plough straight through the horde.">Auto, Gabelstapler und LKW sind fahrbar – einsteigen und mitten durch die Horde.</p></li>
+    </ol>
+    <p class="more" data-en="Between rounds: the workshop with upgrades, armor sets, paint jobs and weapon finishes. Missions, random events and mutators change the rules. Controls: touch with gyro aiming, or a gamepad.">Zwischen den Runden: die Werkstatt mit Upgrades, Rüstungs-Sets, Lackierungen und Waffen-Finishes. Missionen, Zufallsereignisse und Mutatoren verändern die Regeln. Steuerung: Touch mit Gyro-Zielen oder Gamepad.</p>
+  </div>
+</section>
+
+<section id="zahlen">
+  <div class="wrap">
+    <p class="eyebrow" data-en="In numbers">In Zahlen</p>
+    <h2 data-en="What's inside">Was drinsteckt</h2>
+    <ul class="nums" aria-label="Spielinhalt in Zahlen">
+      <li><b>19</b><span data-en="Maps">Karten</span></li>
+      <li><b>23</b><span data-en="Enemy types">Gegnertypen</span></li>
+      <li><b>5</b><span data-en="Bosses">Bosse</span></li>
+      <li><b>23</b><span data-en="Weapons">Waffen</span></li>
+      <li><b>36</b><span data-en="Achievements">Erfolge</span></li>
+    </ul>
+    <p class="more" data-en="Factory hall, moon base, jungle temple, harbor, yard, forest and more – every map has several levels.">Fabrikhalle, Mondbasis, Dschungeltempel, Hafen, Hof, Wald und mehr – jede Karte hat mehrere Ebenen.</p>
+  </div>
+</section>
+
+<section id="screens" class="alt">
+  <div class="wrap">
+    <p class="eyebrow">Screenshots</p>
+    <h2 data-en="This is what the arena looks like">So sieht es in der Arena aus</h2>
+    <p class="lead" data-en="Tap an image to enlarge it.">Tippe auf ein Bild, um es größer zu sehen.</p>
+    <ul class="gal" id="gal">
+      <li><figure><button type="button" aria-label="Bild vergrößern" data-en-aria="Enlarge image"><img src="assets/shot1.jpg" srcset="assets/shot1-640.jpg 640w, assets/shot1.jpg 1280w" sizes="(min-width:900px) 270px, 84vw" width="1280" height="720" loading="lazy" decoding="async" alt="Roboter stürmen in der Fabrikhalle auf den Spieler zu" data-en-alt="Robots charge at the player in the factory hall"></button><figcaption><b>01</b><span data-en="Offline shooter vs robot hordes">Offline-Shooter gegen Roboter-Horden</span></figcaption></figure></li>
+      <li><figure><button type="button" aria-label="Bild vergrößern" data-en-aria="Enlarge image"><img src="assets/shot2.jpg" srcset="assets/shot2-640.jpg 640w, assets/shot2.jpg 1280w" sizes="(min-width:900px) 270px, 84vw" width="1280" height="720" loading="lazy" decoding="async" alt="Boss-Kampf gegen DR. CLANK in Welle 5" data-en-alt="Boss fight against DR. CLANK in wave 5"></button><figcaption><b>02</b><span data-en="5 bosses with second phase">5 Bosse mit zweiter Phase</span></figcaption></figure></li>
+      <li><figure><button type="button" aria-label="Bild vergrößern" data-en-aria="Enlarge image"><img src="assets/shot3.jpg" srcset="assets/shot3-640.jpg 640w, assets/shot3.jpg 1280w" sizes="(min-width:900px) 270px, 84vw" width="1280" height="720" loading="lazy" decoding="async" alt="Hafen im Regen: Boss BOOMBOT nähert sich zwischen Containern" data-en-alt="Harbor in the rain: boss BOOMBOT approaches between containers"></button><figcaption><b>03</b><span data-en="19 maps, multiple levels">19 Karten, mehrere Ebenen</span></figcaption></figure></li>
+      <li><figure><button type="button" aria-label="Bild vergrößern" data-en-aria="Enlarge image"><img src="assets/shot4.jpg" srcset="assets/shot4-640.jpg 640w, assets/shot4.jpg 1280w" sizes="(min-width:900px) 270px, 84vw" width="1280" height="720" loading="lazy" decoding="async" alt="Der Spieler fährt mit einem Gabelstapler durch die Halle" data-en-alt="The player drives a forklift through the hall"></button><figcaption><b>04</b><span data-en="Drive cars, forklifts, trucks">Auto, Gabelstapler, LKW fahren</span></figcaption></figure></li>
+      <li><figure><button type="button" aria-label="Bild vergrößern" data-en-aria="Enlarge image"><img src="assets/shot5.jpg" srcset="assets/shot5-640.jpg 640w, assets/shot5.jpg 1280w" sizes="(min-width:900px) 270px, 84vw" width="1280" height="720" loading="lazy" decoding="async" alt="Werkstatt-Menü: Rüstungs-Sets, Farben und die Auswahl aus 20 Robotern" data-en-alt="Workshop menu: armor sets, colors and the choice of 20 robots"></button><figcaption><b>05</b><span data-en="23 weapons, workshop, armor sets">23 Waffen, Werkstatt, Rüstungen</span></figcaption></figure></li>
+      <li><figure><button type="button" aria-label="Bild vergrößern" data-en-aria="Enlarge image"><img src="assets/shot6.jpg" srcset="assets/shot6-640.jpg 640w, assets/shot6.jpg 1280w" sizes="(min-width:900px) 270px, 84vw" width="1280" height="720" loading="lazy" decoding="async" alt="Upgrade-Auswahl nach Welle 1: drei Karten zur Wahl" data-en-alt="Upgrade choice after wave 1: three cards to pick from"></button><figcaption><b>06</b><span data-en="Pick an upgrade every wave">Nach jeder Welle ein Upgrade</span></figcaption></figure></li>
+      <li><figure><button type="button" aria-label="Bild vergrößern" data-en-aria="Enlarge image"><img src="assets/menu.jpg" srcset="assets/menu-640.jpg 640w, assets/menu.jpg 1280w" sizes="(min-width:900px) 270px, 84vw" width="1280" height="720" loading="lazy" decoding="async" alt="Hauptmenü mit Spielmodus-, Karten- und Mutatoren-Wahl" data-en-alt="Main menu with game mode, map and mutator selection"></button><figcaption><b>07</b><span data-en="Choose mode, map and mutators">Modus, Karte und Mutatoren wählen</span></figcaption></figure></li>
+      <li><figure><button type="button" aria-label="Bild vergrößern" data-en-aria="Enlarge image"><img src="assets/moon.jpg" srcset="assets/moon-640.jpg 640w, assets/moon.jpg 1280w" sizes="(min-width:900px) 270px, 84vw" width="1280" height="720" loading="lazy" decoding="async" alt="Mondbasis bei Nacht: Explosion einer Panzerfaust-Rakete vor Sternenhimmel" data-en-alt="Moon base at night: rocket launcher explosion under a starry sky"></button><figcaption><b>08</b><span data-en="Moon base under a starry sky">Mondbasis unter Sternenhimmel</span></figcaption></figure></li>
+    </ul>
+  </div>
+</section>
+
+<section id="roboter">
+  <div class="wrap">
+    <p class="eyebrow" data-en="The robots">Die Roboter</p>
+    <h2 data-en="20 robots – enemies and avatars alike">20 Roboter – Gegner und Avatar zugleich</h2>
+    <p class="lead" data-en="Every robot type attacks differently. Learn their patterns – and play as any of the 20 yourself, with armor sets, paint jobs and weapon finishes from the workshop.">Jeder Roboter-Typ greift anders an. Lerne ihre Muster – und spiele selbst als einer der 20, mit Rüstungs-Sets, Lackierungen und Waffen-Finishes aus der Werkstatt.</p>
+    <ul class="robos" aria-label="Die 20 Roboter">
+      <li style="--c:#ff8a1f"><b>BOLTIX</b><small data-en="Enemy · playable">Gegner · spielbar</small></li>
+      <li style="--c:#ffd400"><b>ZAPPY</b><small data-en="Enemy · playable">Gegner · spielbar</small></li>
+      <li style="--c:#7cb342"><b>CHUNK</b><small data-en="Enemy · playable">Gegner · spielbar</small></li>
+      <li style="--c:#a78bfa"><b>SPIRAL</b><small data-en="Enemy · playable">Gegner · spielbar</small></li>
+      <li style="--c:#3ddc84"><b>TOXO</b><small data-en="Enemy · playable">Gegner · spielbar</small></li>
+      <li style="--c:#ff6ec7"><b>BOUNC3</b><small data-en="Enemy · playable">Gegner · spielbar</small></li>
+      <li style="--c:#f97316"><b>KABLO</b><small data-en="Enemy · playable">Gegner · spielbar</small></li>
+      <li class="boss" style="--c:#ffffff"><b>DR. CLANK</b><small data-en="Boss · playable">Boss · spielbar</small></li>
+      <li style="--c:#fb923c"><b>ROLLO</b><small data-en="Enemy · playable">Gegner · spielbar</small></li>
+      <li style="--c:#2dd4bf"><b>PIXIT</b><small data-en="Enemy · playable">Gegner · spielbar</small></li>
+      <li style="--c:#818cf8"><b>GRAVI</b><small data-en="Enemy · playable">Gegner · spielbar</small></li>
+      <li style="--c:#49c0ff"><b>BLUB0</b><small data-en="Enemy · playable">Gegner · spielbar</small></li>
+      <li style="--c:#facc15"><b>SPARKZ</b><small data-en="Enemy · playable">Gegner · spielbar</small></li>
+      <li style="--c:#ef4444"><b>CRUSH</b><small data-en="Enemy · playable">Gegner · spielbar</small></li>
+      <li style="--c:#eab308"><b>NIBB0</b><small data-en="Enemy · playable">Gegner · spielbar</small></li>
+      <li style="--c:#22d3ee"><b>TWIRLY</b><small data-en="Enemy · playable">Gegner · spielbar</small></li>
+      <li style="--c:#f43f5e"><b>FLAMI</b><small data-en="Enemy · playable">Gegner · spielbar</small></li>
+      <li style="--c:#7dd3fc"><b>FROZO</b><small data-en="Enemy · playable">Gegner · spielbar</small></li>
+      <li style="--c:#4ade80"><b>ZOOM</b><small data-en="Enemy · playable">Gegner · spielbar</small></li>
+      <li class="boss" style="--c:#ff5b2e"><b>BOOMBOT</b><small data-en="Boss · playable">Boss · spielbar</small></li>
+    </ul>
+    <p class="robonote" data-en="Plus: 23 weapons, missions, random events, mutators, 36 achievements and an optional online leaderboard.">Dazu: 23 Waffen, Missionen, Zufallsereignisse, Mutatoren, 36 Erfolge und eine optionale Online-Bestenliste.</p>
+  </div>
+</section>
+<div class="hazard" role="presentation"></div>
+
+<section id="trailer" class="alt" data-trailer>
+  <div class="wrap">
+    <p class="eyebrow">Trailer</p>
+    <h2 data-en="Gameplay in motion">Gameplay in Bewegung</h2>
+    <p class="lead" data-en="A short clip straight from the arena.">Ein kurzer Clip direkt aus der Arena.</p>
+    <figure class="frame">
+      <video id="trailer-video" controls playsinline preload="metadata" poster="assets/feature.png" width="960" height="540" aria-label="Gameplay-Trailer von Robo Rumble" data-en-aria="Robo Rumble gameplay trailer">
+        <source src="assets/trailer.mp4" type="video/mp4">
+        <source src="assets/trailer.webm" type="video/webm">
+      </video>
+    </figure>
+  </div>
+</section>
+
+<section id="presse">
+  <div class="wrap press">
+    <div>
+      <p class="eyebrow" data-en="For press & creators">Für Presse &amp; Creator</p>
+      <h2 data-en="Material and facts">Material und Fakten</h2>
+      <p class="lead" data-en="You write about mobile games or make videos? Get in touch – you get a personal reply. Icon, key art and clip may be used for articles and videos; the facts below are the press kit.">Du schreibst über Mobile-Games oder machst Videos? Melde dich – du bekommst eine persönliche Antwort. Icon, Key-Art und Clip dürfen für Berichte und Videos verwendet werden; die Fakten unten sind das Press-Kit.</p>
+      <a class="mail" href="mailto:robertletkemann@googlemail.com?subject=Robo%20Rumble%20%E2%80%93%20Presse%2FCreator"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>robertletkemann@googlemail.com</a>
+      <ul class="dl" aria-label="Downloads">
+        <li><a href="assets/icon512.png" download="RoboRumble_Icon_512.png"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M12 8v8m0 0 3-3m-3 3-3-3"/></svg><span><span data-en="App icon">App-Icon</span><small>PNG · 512 × 512</small></span></a></li>
+        <li><a href="assets/feature.png" download="RoboRumble_Feature_1024x500.png"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 16 5-5 4 4 3-3 6 6"/><circle cx="16" cy="9" r="1.5"/></svg><span><span data-en="Key art / feature graphic">Key-Art / Feature-Grafik</span><small>PNG · 1024 × 500</small></span></a></li>
+        <li data-trailer><a href="assets/trailer.mp4" download="RoboRumble_Gameplay.mp4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3z"/></svg><span><span data-en="Gameplay clip">Gameplay-Clip</span><small>MP4 · 960 × 540</small></span></a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=de.letkemannstudio.roborumble" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10 18.5h4"/></svg><span><span data-en="Screenshots and age rating">Screenshots und Altersfreigabe</span><small data-en="on the Google Play page">auf der Google-Play-Seite</small></span></a></li>
+      </ul>
+    </div>
+    <dl class="sheet" aria-label="Fakten">
+      <div><dt data-en="Title">Titel</dt><dd>Robo Rumble</dd></div>
+      <div><dt data-en="Developer">Entwickler</dt><dd data-en="Letkemann Studio (solo developer, Germany)">Letkemann Studio (Solo-Entwickler, Deutschland)</dd></div>
+      <div><dt data-en="Platform">Plattform</dt><dd data-en="Android, via Google Play">Android, über Google Play</dd></div>
+      <div><dt data-en="Price">Preis</dt><dd data-en="Free, ad-supported, no in-app purchases">Kostenlos, werbefinanziert, keine In-App-Käufe</dd></div>
+      <div><dt>Genre</dt><dd data-en="First-person shooter / wave survival (arena shooter), cartoon look, single player">Ego-Shooter / Wave Survival (Arena-Shooter), Cartoon-Look, Einzelspieler</dd></div>
+      <div><dt data-en="Content">Inhalt</dt><dd data-en="19 maps with several levels, 23 enemy types, 5 bosses with second phase, 23 weapons, drivable vehicles, workshop, 36 achievements, missions, random events, mutators, optional online leaderboard">19 Karten mit mehreren Ebenen, 23 Gegnertypen, 5 Bosse mit zweiter Phase, 23 Waffen, fahrbare Fahrzeuge, Werkstatt, 36 Erfolge, Missionen, Zufallsereignisse, Mutatoren, optionale Online-Bestenliste</dd></div>
+      <div><dt data-en="Controls">Steuerung</dt><dd data-en="Touch with gyro aiming, gamepad support">Touch mit Gyro-Zielen, Gamepad-Unterstützung</dd></div>
+      <div><dt data-en="Online">Online</dt><dd data-en="Not required: fully playable offline, no account">Nicht nötig: komplett offline spielbar, kein Konto</dd></div>
+      <div><dt data-en="Age rating">Alter</dt><dd data-en="12+ (IARC/USK); cartoon violence against robots, no humans, no blood">ab 12 (IARC/USK); Cartoon-Gewalt gegen Roboter, keine Menschen, kein Blut</dd></div>
+      <div><dt data-en="Language">Sprache</dt><dd data-en="In-game text in German">Spiel-Texte auf Deutsch</dd></div>
+      <div><dt>Version</dt><dd data-en="1.57 (October 2026), updated regularly">1.57 (Oktober 2026), wird laufend erweitert</dd></div>
+      <div><dt data-en="Package">Paket</dt><dd>de.letkemannstudio.roborumble</dd></div>
+      <div><dt data-en="Contact">Kontakt</dt><dd><a href="mailto:robertletkemann@googlemail.com">robertletkemann@googlemail.com</a></dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="faq" class="alt">
+  <div class="wrap">
+    <p class="eyebrow">FAQ</p>
+    <h2 data-en="Frequently asked questions">Häufige Fragen</h2>
+    <div class="faq">
+      <details>
+        <summary data-en="What does Robo Rumble cost? Are there ads?">Was kostet Robo Rumble? Gibt es Werbung?</summary>
+        <p class="a" data-en="Nothing – the game is free and has no in-app purchases. It is funded by ads: a banner in the menu and one interstitial after matches (at most every 5 minutes, never in the first 4 minutes). From version 1.58 there are also optional bonus videos (max. 8 per day) that give you scrap or extra lives.">Nichts – das Spiel ist kostenlos und hat keine In-App-Käufe. Es finanziert sich über Werbung: ein Banner im Menü und eine Zwischenanzeige nach Matches (höchstens alle 5 Minuten, nie in den ersten 4 Minuten). Ab Version 1.58 kommen freiwillige Bonus-Videos (maximal 8 pro Tag) dazu, die Schrott oder Extra-Leben bringen.</p>
+      </details>
+      <details>
+        <summary data-en="Do I need internet to play?">Brauche ich Internet, um zu spielen?</summary>
+        <p class="a" data-en="No. Robo Rumble is a single-player shooter and runs completely offline – on the train, on a plane or in a dead zone. Only the optional online leaderboard needs a connection.">Nein. Robo Rumble ist ein Einzelspieler-Shooter und läuft komplett offline – im Zug, im Flugzeug oder im Funkloch. Nur die optionale Online-Bestenliste braucht eine Verbindung.</p>
+      </details>
+      <details>
+        <summary data-en="What age is the game for?">Ab welchem Alter ist das Spiel?</summary>
+        <p class="a" data-en="The age rating is 12+ (IARC/USK). It is cartoon action against robots: no humans, no blood. No account is needed, and progress is stored on the device.">Die Altersfreigabe liegt bei 12 Jahren (IARC/USK). Es ist Cartoon-Action gegen Roboter: keine Menschen, kein Blut. Ein Konto ist nicht nötig, der Fortschritt bleibt auf dem Gerät.</p>
+      </details>
+      <details>
+        <summary data-en="Can I play with a gamepad or gyro aiming?">Kann ich mit Gamepad oder Gyro spielen?</summary>
+        <p class="a" data-en="Yes. You play by touch with optional gyro aiming (tilt the phone to aim) or with a gamepad – you decide how you shoot.">Ja. Gespielt wird per Touch mit optionalem Gyro-Zielen (Handy neigen, um zu zielen) oder mit einem Gamepad – du entscheidest, wie du schießt.</p>
+      </details>
+      <details>
+        <summary data-en="Is there an iPhone or iPad version?">Gibt es Robo Rumble für iPhone oder iPad?</summary>
+        <p class="a" data-en="No. Robo Rumble is currently only available for Android, free on Google Play.">Nein. Robo Rumble gibt es derzeit nur für Android – kostenlos bei Google Play.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2 data-en="Ready for the arena?">Bereit für die Arena?</h2>
+    <p class="lead" data-en="Free for Android. No internet, no account – just play.">Kostenlos für Android. Ohne Internet, ohne Konto – einfach loslegen.</p>
+    <div class="cta">
+      <a class="btn" href="https://play.google.com/store/apps/details?id=de.letkemannstudio.roborumble" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+        <span data-en="Download free now">Jetzt kostenlos laden</span>
+      </a>
+      <div class="badge-row">
+        <a class="badge" href="https://play.google.com/store/apps/details?id=de.letkemannstudio.roborumble" rel="noopener" aria-label="Jetzt bei Google Play" data-en-aria="Get it on Google Play"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/de_badge_web_generic.png" data-en-src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" width="646" height="250" alt="Jetzt bei Google Play" data-en-alt="Get it on Google Play" loading="lazy" onerror="this.parentNode.hidden=true"></a>
+      </div>
+    </div>
+  </div>
+</section>
 </main>
+
+<footer>
+  <div class="wrap">
+    <div class="row">
+      <nav aria-label="Rechtliches und Kontakt">
+        <a href="datenschutz.html" data-en="Privacy policy">Datenschutz</a>
+        <a href="https://play.google.com/store/apps/details?id=de.letkemannstudio.roborumble" rel="noopener">Play Store</a>
+        <a href="mailto:robertletkemann@googlemail.com" data-en="Contact">Kontakt</a>
+      </nav>
+      <div>© 2026 Letkemann Studio</div>
+    </div>
+    <p class="legal" data-en="Robo Rumble is a game by Letkemann Studio. Google Play and the Google Play logo are trademarks of Google LLC. The privacy policy is available in German.">Robo Rumble ist ein Spiel von Letkemann Studio. Google Play und das Google Play-Logo sind Marken von Google LLC.</p>
+  </div>
+</footer>
+
+<div class="dock" id="dock" aria-hidden="true">
+  <a class="btn" href="https://play.google.com/store/apps/details?id=de.letkemannstudio.roborumble" rel="noopener" tabindex="-1">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+    <span data-en="Download free now">Jetzt kostenlos laden</span>
+  </a>
+</div>
+
+<dialog class="lb" id="lb" aria-label="Bildansicht" data-en-aria="Image view">
+  <div class="lbin">
+    <img id="lbimg" alt="">
+    <div class="lbbar">
+      <button type="button" class="lbbtn" id="lbprev" aria-label="Vorheriges Bild" data-en-aria="Previous image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
+      <p id="lbcap"></p>
+      <button type="button" class="lbbtn" id="lbnext" aria-label="Nächstes Bild" data-en-aria="Next image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+    </div>
+  </div>
+  <button type="button" class="lbbtn lbx" id="lbclose" aria-label="Schließen" data-en-aria="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+</dialog>
+
+<script>
+(function(){
+  "use strict";
+  function qs(s, r){ return (r || document).querySelector(s); }
+  function qsa(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
+
+  /* ---------- Sprache: Deutsch steht im HTML, Englisch in data-en / data-en-* ---------- */
+  var ATTRS = [["data-en-aria", "aria-label"], ["data-en-alt", "alt"], ["data-en-content", "content"], ["data-en-src", "src"]];
+  var cur = "de";
+  function setLang(l, remember){
+    l = l === "en" ? "en" : "de";
+    cur = l;
+    var en = l === "en";
+    document.documentElement.lang = l;
+    qsa("[data-en]").forEach(function(el){
+      if (!el.hasAttribute("data-de")) el.setAttribute("data-de", el.textContent);
+      el.textContent = el.getAttribute(en ? "data-en" : "data-de");
+    });
+    ATTRS.forEach(function(p){
+      var deKey = p[0].replace("data-en", "data-de");
+      qsa("[" + p[0] + "]").forEach(function(el){
+        if (!el.hasAttribute(deKey)) el.setAttribute(deKey, el.getAttribute(p[1]) || "");
+        var v = el.getAttribute(en ? p[0] : deKey);
+        if (el.getAttribute(p[1]) !== v) el.setAttribute(p[1], v);
+        if (p[1] === "src" && el.parentNode && el.parentNode.hidden) el.parentNode.hidden = false;
+      });
+    });
+    qsa(".lang button").forEach(function(b){ b.setAttribute("aria-pressed", String(b.getAttribute("data-lang") === l)); });
+    if (remember) {
+      try { localStorage.setItem("rr_lang", l); } catch (e) {}
+      if (history.replaceState) {
+        try {
+          var u = new URL(location.href);
+          if (en) u.searchParams.set("lang", "en"); else u.searchParams.delete("lang");
+          history.replaceState(null, "", u.pathname + u.search + u.hash);
+        } catch (e) {}
+      }
+    }
+  }
+  var want = null;
+  try { want = new URL(location.href).searchParams.get("lang"); } catch (e) {}
+  if (!want) { try { want = localStorage.getItem("rr_lang"); } catch (e) {} }
+  if (want === "en") setLang("en", false);
+  qsa(".lang button").forEach(function(b){ b.addEventListener("click", function(){ setLang(b.getAttribute("data-lang"), true); }); });
+
+  /* ---------- Trailer: Bereich ausblenden, wenn assets/trailer.mp4 (und .webm) fehlt oder nicht abspielbar ist ---------- */
+  var tv = qs("#trailer-video");
+  function hideTrailer(){ qsa("[data-trailer]").forEach(function(el){ el.hidden = true; }); }
+  if (tv) {
+    var srcs = qsa("source", tv);
+    (srcs.length ? srcs[srcs.length - 1] : tv).addEventListener("error", hideTrailer);
+    if (tv.error || (srcs.length && tv.networkState === 3)) hideTrailer();
+    if (window.fetch && /^https?:$/.test(location.protocol)) {
+      Promise.all((srcs.length ? srcs : [tv]).map(function(s){
+        return fetch(s.getAttribute("src"), {method: "HEAD"}).then(function(r){ return r.ok; }, function(){ return true; });
+      })).then(function(oks){ if (oks.indexOf(true) < 0) hideTrailer(); });
+    }
+  }
+
+  /* ---------- Untere Lade-Leiste (Handy), sobald der Hero-Knopf aus dem Bild ist ---------- */
+  var dock = qs("#dock"), mainCta = qs("#cta-main"), finalCta = qs(".final");
+  if (dock && mainCta && "IntersectionObserver" in window) {
+    var ctaVisible = true, endVisible = false;
+    function updateDock(){
+      var on = !ctaVisible && !endVisible && window.scrollY > 200;
+      dock.classList.toggle("on", on);
+      dock.setAttribute("aria-hidden", String(!on));
+      qs("a", dock).tabIndex = on ? 0 : -1;
+      document.body.classList.toggle("docked", on);
+    }
+    new IntersectionObserver(function(es){ ctaVisible = es[0].isIntersecting; updateDock(); }).observe(mainCta);
+    if (finalCta) new IntersectionObserver(function(es){ endVisible = es[0].isIntersecting; updateDock(); }).observe(finalCta);
+  }
+
+  /* ---------- Leuchtkasten für Screenshots ---------- */
+  var lb = qs("#lb"), lbimg = qs("#lbimg"), lbcap = qs("#lbcap");
+  var items = qsa("#gal figure"), idx = 0;
+  if (lb && lbimg && items.length) {
+    var show = function(i){
+      idx = (i + items.length) % items.length;
+      var im = qs("img", items[idx]);
+      lbimg.src = im.getAttribute("src");
+      lbimg.alt = im.alt;
+      lbcap.textContent = qs("figcaption span", items[idx]).textContent;
+    };
+    items.forEach(function(f, i){
+      qs("button", f).addEventListener("click", function(){
+        if (typeof lb.showModal === "function") { show(i); lb.showModal(); }
+        else { window.open(qs("img", f).getAttribute("src"), "_blank", "noopener"); }
+      });
+    });
+    qs("#lbprev").addEventListener("click", function(){ show(idx - 1); });
+    qs("#lbnext").addEventListener("click", function(){ show(idx + 1); });
+    qs("#lbclose").addEventListener("click", function(){ lb.close(); });
+    lb.addEventListener("click", function(e){ if (e.target === lb || e.target.classList.contains("lbin")) lb.close(); });
+    lb.addEventListener("keydown", function(e){ if (e.key === "ArrowLeft") show(idx - 1); if (e.key === "ArrowRight") show(idx + 1); });
+    lb.addEventListener("close", function(){ lbimg.removeAttribute("src"); });
+    var tx = null;
+    lb.addEventListener("touchstart", function(e){ tx = e.changedTouches[0].clientX; }, {passive: true});
+    lb.addEventListener("touchend", function(e){ if (tx == null) return; var dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 50) show(idx + (dx < 0 ? 1 : -1)); tx = null; }, {passive: true});
+  }
+})();
+</script>
 </body>
 </html>
